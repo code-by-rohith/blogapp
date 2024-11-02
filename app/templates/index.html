@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/styles.css">
+    <title>Blog Home</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Blog Posts</h1>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/posts/create">Create New Post</a>
+        </nav>
+        <ul>
+            {% for post in posts %}
+                <li>
+                    <div class="post-card">
+                        <a href="/posts/{{ post.id }}">{{ post.title }}</a>
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>
